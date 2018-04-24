@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <title>Relaxtion practices</title>
+    <script>
+      ons.platform.select('android')
+    </script>
+
+  </head>
+  <body>
+
+    <ons-tabbar>
+      <ons-tab label="About" icon="md-settings" page="about.html" active></ons-tab>
+      <ons-tab label="Sleeping" icon="md-face" page="sleeping.html"></ons-tab>
+      <ons-tab label="Reading" icon="md-plus" page="reading.html"></ons-tab>
+      <ons-tab label="Jogging" icon="md-edit" page="jogging.html"></ons-tab>
+    </ons-tabbar>
+
+
+    <script>
+
+
+    function showPage(page) {
+      $('#myNavigator')[0].pushPage(page);
+    }
+  </script>
+  </body>
+</html>
+
+
+<template id="index.html">
+  <ons-page id="index">
+    <ons-toolbar>
+      <ons-button class="right" onclick="showPage('about.html')">About</ons-button>
+      <div class="center">Relaxation practices</div>
+    </ons-toolbar>
+
+    <ons-list>
+      <ons-list-item onclick="showPage('sleeping.html')">Sleeping</ons-list-item>
+      <ons-list-item onclick="showPage('jogging.html')">Jogging</ons-list-item>
+      <ons-list-item onclick="showPage('reading.html')">Reading</ons-list-item>
+    </ons-list>
+  </ons-page>
+</template>
+
+
+<template id="about.html">
+  <ons-page>
+    <ons-toolbar class="custom-color">
+      <div class="center title">About</div>
+    </ons-toolbar>
+    <p>This is a page where we list relaxation practices</p>
+    <p>This app was written by Sam and Victor</p>
+  </ons-page>
+</template>
+
+<template id="sleeping.html">
+  <ons-page id="sleeping">
+    <ons-toolbar class="custom-color">
+      <p class="center title">Sleeping</p>
+    </ons-toolbar>
+    <img class="image" src="https://github.com/mikaelkindborg/evo-demos/blob/master/Demos2014/relaxation-beacons/photos/photo-default-unused.jpg?raw=true">
+
+    <p> Sleeping is very relaxing</p>
+
+  </ons-page>
+</template>
+
+<template id="jogging.html">
+  <ons-page id="jogging">
+    <ons-toolbar class="custom-color">
+      <p class="center title">Jogging</p>
+    </ons-toolbar>
+    <img class="image" src="https://github.com/mikaelkindborg/evo-demos/blob/master/Demos2014/relaxation-beacons/photos/photo-default-unused.jpg?raw=true">
+    <p> Jogging is very relaxing</p>
+  </ons-page>
+</template>
+
+<template id="reading.html">
+  <ons-page id="reading">
+    <ons-toolbar class="custom-color">
+      <p class="center title">Reading</p>
+    </ons-toolbar>
+    <img class="image" src="https://github.com/mikaelkindborg/evo-demos/blob/master/Demos2014/relaxation-beacons/photos/photo-default-unused.jpg?raw=true">
+    <p> Reading is very relaxing</p>
+  </ons-page>
+</template>

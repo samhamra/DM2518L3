@@ -1,3 +1,0 @@
-<template id="page.html">
-  <ons-page><!-- Content here--></ons-page>
-</template>

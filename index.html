@@ -3,12 +3,145 @@
   <head>
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+
     <meta charset="utf-8">
-    <title></title>
+    <title>Relaxtion practices</title>
+    <script>
+      ons.platform.select('ios')
+     //ons.platform.select('android')
+    </script>
+
   </head>
   <body>
 
+
+<ons-page>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="right" width="220px" collapse swipeable>
+  <ons-page>
+    <ons-list>
+      <ons-list-item onclick="showPage('jogging.html')" tappable>
+        Jogging
+      </ons-list-item>
+      <ons-list-item onclick="showPage('reading.html')" tappable>
+        Reading
+      </ons-list-item>
+      <ons-list-item onclick="showPage('sleeping.html')" tappable>
+        Sleeping
+      </ons-list-item>
+    </ons-list>
+  </ons-page>
+</ons-splitter-side>
+<ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+</ons-splitter>
+</ons-page>
+
+    <script>
+
+
+    function showPage(page) {
+      $('#myNavigator')[0].pushPage(page);
+    }
+  </script>
   </body>
 </html>
+
+<ons-template id="home.html">
+  <ons-page id="home">
+    <ons-navigator id="myNavigator" page="index.html"></ons-navigator>
+  </ons-page>
+</ons-template>
+
+<template id="index.html">
+  <ons-page id="index">
+    <ons-toolbar class="index-header">
+      <ons-toolbar-button style="font-size: 30px" class="left about" onclick="showPage('about.html')">
+        About
+      </ons-toolbar-button>
+      <p class="header-text center">Relaxation practices</p>
+
+      <ons-toolbar-button onclick="$('#dialog-1').show()" class="right">
+        Dialog
+      </ons-toolbar-button>
+
+    </ons-toolbar>
+
+    <ons-dialog id="dialog-1">
+      This is a dialog!
+      <ons-button onclick="$('#dialog-1').hide()">
+        Hide dialog
+      </ons-button>
+    </ons-dialog>
+
+    <ons-list>
+      <ons-list-item onclick="showPage('sleeping.html')">Sleeping</ons-list-item>
+      <ons-list-item onclick="showPage('jogging.html')">Jogging</ons-list-item>
+      <ons-list-item onclick="showPage('reading.html')">Reading</ons-list-item>
+    </ons-list>
+  </ons-page>
+</template>
+
+
+<template id="about.html">
+  <ons-page>
+    <ons-toolbar>
+      <ons-back-button class="left" onclick="showPage('index.html')">Back</ons-back-button>
+      <p class="center header-text">About</p>
+    </ons-toolbar>
+    <p>This is a page where we list relaxation practices</p>
+    <p>This app was written by Sam and Victor</p>
+  </ons-page>
+</template>
+
+<template id="sleeping.html">
+  <ons-page id="sleeping">
+    <ons-toolbar class="relaxation-header">
+      <ons-back-button class="left button" onclick="showPage('index.html')">Back</ons-back-button>
+      <p class="center header-text">Sleeping</p>
+    </ons-toolbar>
+    <img class="image" src="https://github.com/mikaelkindborg/evo-demos/blob/master/Demos2014/relaxation-beacons/photos/photo-default-unused.jpg?raw=true">
+
+    <p class="relaxation-text"> Sleeping is very relaxing</p>
+    <div class="center">
+      <p>Have you slept today?</p>
+      <ons-switch>
+      </ons-switch>
+    </div>
+
+  </ons-page>
+</template>
+
+<template id="jogging.html">
+  <ons-page id="jogging">
+    <ons-toolbar class="relaxation-header">
+      <ons-back-button class="left button" onclick="showPage('index.html')">Back</ons-back-button>
+      <p class="center header-text">Jogging</p>
+    </ons-toolbar>
+    <img class="image" src="https://github.com/mikaelkindborg/evo-demos/blob/master/Demos2014/relaxation-beacons/photos/photo-default-unused.jpg?raw=true">
+    <p class="relaxation-text"> Jogging is very relaxing</p>
+    <div class="center">
+      <p>Have you jogged today?</p>
+      <ons-switch>
+      </ons-switch>
+    </div>
+  </ons-page>
+</template>
+
+<template id="reading.html">
+  <ons-page id="reading">
+    <ons-toolbar class="relaxation-header">
+      <ons-back-button class="left button" onclick="showPage('index.html')">Back</ons-back-button>
+      <p class="center header-text">Reading</p>
+    </ons-toolbar>
+    <img class="image" src="https://github.com/mikaelkindborg/evo-demos/blob/master/Demos2014/relaxation-beacons/photos/photo-default-unused.jpg?raw=true">
+    <p class="relaxation-text"> Reading is very relaxing</p>
+    <div class="center">
+      <p>Have you read today?</p>
+      <ons-switch>
+      </ons-switch>
+    </div>
+  </ons-page>
+</template>
